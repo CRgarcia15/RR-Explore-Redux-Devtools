@@ -5,12 +5,15 @@ const initialState = {
 }
 
 export const todoSlice = createSlice({
+
     name: 'todos',
     initialState,
     reducers: {
+
         addTodo: (state, action) => {
             return { items: [...state.items, action.payload]}
         },
+
         removeOne: (state, action) => {
             console.log(action)
             let array = [...state.items]
@@ -20,6 +23,7 @@ export const todoSlice = createSlice({
                 return { items: array }
             }
         },
+        
         clearTodo: () => {
             return { items: [] }
         }
